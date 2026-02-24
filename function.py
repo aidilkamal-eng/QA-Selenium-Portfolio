@@ -21,18 +21,7 @@ def melakukanLogin(Username, Password):
     password_field = driver.find_element(By.ID, "password")
     password_field.send_keys(Password)
 
-    captcha_checkbox = driver.find_element(By.ID, "checkbox")
-    captcha_checkbox.click()
 
-    time.sleep(2)
-
-    wait.until(EC.invisibility_of_element_located((By.CLASS_NAME, "no-selection")))
-
-    submit_button = driver.find_element(By.NAME, "Submit")
-    submit_button.click()
-
-
-
-    time.sleep(10)
+    input("Press Enter to close the browser...")
 
     driver.quit()
