@@ -5,14 +5,15 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import time
 
-driver = webdriver.Chrome()
-
-wait = WebDriverWait(driver, 10)
-
 def melakukanLogin(Username, Password):
+    driver = webdriver.Chrome()
+
+    wait = WebDriverWait(driver, 10)
+
     driver.get("https://howlongtobeat.com/login")
 
-    button_consent = driver.find_element(By.ID, "onetrust-accept-btn-handler")
+    
+    button_consent = wait.until(EC.visibility_of_element_located((By.ID, "onetrust-accept-btn-handler")))
     button_consent.click()
 
     username_field = driver.find_element(By.ID, "user_name")
